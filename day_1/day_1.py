@@ -1,7 +1,7 @@
 import FileParser
 
 '''
-Input -> fuel_mass (int), sum (int)
+Input -> fuel_mass (int), fuel_requiered_so_far (int)
 Output -> an integer with the fuel requiered
 '''
 def FuelRequieredPerModule(mass, fuel_requiered_so_far=0):
