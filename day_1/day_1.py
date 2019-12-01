@@ -12,15 +12,13 @@ def FuelRequieredPerModule(mass, fuel_requiered_so_far=0):
         return FuelRequieredPerModule(fuel, fuel+fuel_requiered_so_far)
 
 def FuelRequiered(data):
-    data = data.split('\n')
     return sum([int(int(x)/3)-2 for x in data])
 
 def FuelRequieredPhase2(data):
-    data = data.split('\n')
     return sum([FuelRequieredPerModule(int(x)) for x in data])
 
 def Main():
-    content = FileParser.GetFileContents("day_1_data.txt")
+    content = FileParser.ReadLines("day_1_data.txt")
     print("Part 1 answer: " + str(FuelRequiered(content)))
     print("Part 2 answer: " + str(FuelRequieredPhase2(content)))
 
