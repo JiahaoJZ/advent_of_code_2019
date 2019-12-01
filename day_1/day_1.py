@@ -1,15 +1,15 @@
 import FileParser
 
 '''
-Input -> mass (int), fuel_requiered_so_far (int)
+Input -> fuel_mass (int), sum (int)
 Output -> an integer with the fuel requiered
 '''
-def FuelRequieredPerModule(mass, fuel_requiered_so_far):
+def FuelRequieredPerModule(mass, fuel_requiered_so_far=0):
     fuel = int(mass/3) - 2
     if(fuel <= 0):
-        return sum
+        return fuel_requiered_so_far
     else:
-        return FuelRequieredPerModule(fuel, fuel_requiered_so_far+fuel)
+        return FuelRequieredPerModule(fuel, fuel+fuel_requiered_so_far)
 
 def FuelRequiered(data):
     data = data.split('\n')
@@ -17,7 +17,7 @@ def FuelRequiered(data):
 
 def FuelRequieredPhase2(data):
     data = data.split('\n')
-    return sum([FuelRequieredPerModule(int(x),0) for x in data])
+    return sum([FuelRequieredPerModule(int(x)) for x in data])
 
 def Main():
     content = FileParser.GetFileContents("day_1_data.txt")
