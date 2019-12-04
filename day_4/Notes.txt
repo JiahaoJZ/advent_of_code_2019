@@ -2,4 +2,6 @@ After reading other solutions I have find out that we are actually working with
 sorted lists today, and I did not notice before while solving the problem
 I am definitely not happy with my solution. Especially the one for the part 2.
 
-Update, I have created a v2 with a better code
+Update, I have created a v2 with a better code.
+However, the code in the first code will also work on unsorted lists while the
+second solution only works on sorted lists
